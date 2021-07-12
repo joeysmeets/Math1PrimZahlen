@@ -2,33 +2,64 @@
 public class PrimZahlen {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		// A
+		System.out.println(isPrime(2)  + "\n" + isPrime(5) + "\n" 
+						 + isPrime(15) + "\n" + isPrime(2145));
+		
+		//B
+		System.out.println(countPrimes(2)  + "\n" + countPrimes(5) + "\n" 
+				 		 + countPrimes(15) + "\n" + countPrimes(2145));
 	}
 	
 	/**
+	 * A. Schreiben Sie eine Methode boolean isPrime(int p) , 
+	 * die true genau dann zurückgibt, wenn p eine Primzahl ist.
+	 * 
 	 * checks if a number is prime or not
+	 * 
 	 * @param n
 	 * @return true or false
 	 */
-	public boolean isPrime (int n) {
-	    
-		// if n is smaller or equal to 1, it is not prime
-        if (n <= 1) {
-            return false;  
-        }
-        
-        // if n is a multiple from 2, it is not prime
-        else if (n % 2 == 0) {
-            return false;
-        }
- 
-        // checks the last odds, if n is not prime
-        for (int i = 2; i<= n/2; i++){
-        	if ((n % i) == 0)
-                return false;
-        }
-        // if all above conditions and they were not true, n is prime
-        return true;
+	public static boolean isPrime(long n) {
+		for(int i=2; i<=n/2; i++) {
+			if(n%i==0) {return false;}
+		}
+		if(n<2) return false;
+		
+		return true;
 	}
+	
+	/**
+	 * B. Schreiben Sie eine Methode int countPrimes(int n) , die mit Hilfe von isPrime aus
+	 * a. zählt, wie viele Primzahlen es ≤ n gibt . Vergleichen Sie Ihre Ergebnisse mit der
+	 * Tabelle auf Seite 3 des Skripts „Zahlentheorie“ so weit wie möglich.
+	 * 
+	 * counts how many prime numbers there are under a given bound
+	 * 
+	 * @param n
+	 * @return int count of prime numbers
+	 */
+	public static int countPrimes(int n) {
+		int count = 0;
+		
+		for(int i = 0; i <= n; i++) {
+			if(isPrime(i)) {
+				count++;			
+			}
+		}
+		return count;
+	}
+	
+	/*
+	 * C. Schreiben Sie eine Methode boolean[] eratosthenes(int n) , die zunächst ein
+	 * Feld boolean[] P = new boolean[n] mit true initialisiert und dann mit dem
+	 * Sieb des Eratosthenes die Primzahlen aussiebt (P[n] == true n prim).
+	 */
+	
+	
+	/*
+	 * D. Messen und vergleichen Sie für die Methoden in b. und c., wie lange diese in
+	 * Abhängigkeit von n rechnen.
+	 */
+	
 }
