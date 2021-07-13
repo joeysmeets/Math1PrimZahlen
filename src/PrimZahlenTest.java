@@ -64,9 +64,5 @@ class PrimZahlenTest {
 	void test10() {
 		assertEquals(1203, checker.countPrimes(9762));
 	}
-	
-//	@Test
-//	void test11() {
-//		assertEquals(true, checker.countPrimes(97));
-//	}
+
 }

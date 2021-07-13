@@ -2,11 +2,11 @@
 public class PrimZahlen {
 
 	public static void main(String[] args) {
-		// A
+		/* Aufgabe A. */
 		System.out.println(isPrime(2)  + "\n" + isPrime(5) + "\n" 
 						 + isPrime(15) + "\n" + isPrime(2145));
-		
-		//B
+
+		/* Aufgabe B. */
 		System.out.println(countPrimes(2)  + "\n" + countPrimes(5) + "\n" 
 				 		 + countPrimes(15) + "\n" + countPrimes(2145));
 	}
@@ -17,14 +17,14 @@ public class PrimZahlen {
 	 * 
 	 * checks if a number is prime or not
 	 * 
-	 * @param n
+	 * @param p
 	 * @return true or false
 	 */
-	public static boolean isPrime(long n) {
-		for(int i=2; i<=n/2; i++) {
-			if(n%i==0) {return false;}
+	public static boolean isPrime(int p) {
+		for(int i = 2; i <= p / 2; i++) {
+			if(p % i == 0) {return false;}
 		}
-		if(n<2) return false;
+		if(p < 2 ) return false;
 		
 		return true;
 	}
@@ -50,14 +50,19 @@ public class PrimZahlen {
 		return count;
 	}
 	
-	/*
+	/**
 	 * C. Schreiben Sie eine Methode boolean[] eratosthenes(int n) , die zunächst ein
 	 * Feld boolean[] P = new boolean[n] mit true initialisiert und dann mit dem
 	 * Sieb des Eratosthenes die Primzahlen aussiebt (P[n] == true n prim).
 	 */
+	public boolean[] eratosthenes(int n) {
+		boolean[] p = new boolean[n];
+
+		return null;
+	}
 	
 	
-	/*
+	/**
 	 * D. Messen und vergleichen Sie für die Methoden in b. und c., wie lange diese in
 	 * Abhängigkeit von n rechnen.
 	 */
